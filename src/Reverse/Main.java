@@ -1,13 +1,24 @@
 package Reverse;
 
+import java.io.Console;
+
 public class Main {
 
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		requestInputFromUser();
+	}
 
+	private static void requestInputFromUser() {
+		Console console = System.console();
+
+		System.out.println("Please enter a string to reverse:");
+		String word = console.readLine();
+		reverseWord(word);
+	}
+
+	private static void reverseWord(String word) {
+		String returnedWord = new StringBuilder(word).reverse().toString();
+		System.out.println("Returned word: " + returnedWord);
 	}
 
 }
